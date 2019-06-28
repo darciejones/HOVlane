@@ -9,7 +9,7 @@
     <!-- Javier added all of this -->
     <!-- Testing Google maps API -->
     <!-- Google Places -->
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script> -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -86,7 +86,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -118,22 +118,22 @@
     </nav>
 
     <div class="container">
-            <label for="uName"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uName" required>
+        <label for="uName"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uName" required>
 
-            <label for="psw"><b>Password</label><b></label>
+        <label for="psw"><b>Password</label><b></label>
             <input type="text" placeholder="Enter Password" name="lName" required>
 
 
-        </div>
+    </div>
 
     <div class="jumbotron">
-            <h1 class="fa fa-car" aria-hidden="true" class="display-4">HOVLane</h1>
+        <h1 class="fa fa-car" aria-hidden="true" class="display-4">HOVLane</h1>
 
         <h3 class="text-center">Meetup and carpool service with featured access to local weather and events.</h3>
 
     </div>
-         
+
 
 
     <div>
@@ -149,7 +149,7 @@
             placeholder="Enter your email address or phone number to be reached through the chat">
 
     </div>
-    
+
 
     <!-- Testing Google maps - Javier -->
 
@@ -189,8 +189,8 @@
             var map = new google.maps.Map(document.getElementById('map'), {
                 mapTypeControl: false,
                 center: {
-                    lat: -33.8688,
-                    lng: 151.2195
+                    lat: 38.881478,
+                    lng: -77.116071
                 },
                 zoom: 13
             });
@@ -294,8 +294,9 @@
                 });
         };
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap" async
-        defer></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF1a5U9NrGKQI08yoQI1h7vVPIKdd7w3I&libraries=places&callback=initMap"
+        async defer></script>
     <script type="text/javascript" src="javascript/script.js">
     </script>
 
