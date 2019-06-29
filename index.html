@@ -93,16 +93,35 @@
 
 </head>
 
-<body>
+<body oncontextmenu="return false">
 
         <img src="images/traffic2.jpg" id="bg" alt="background">
 
     
         <div class="container">
             <h1 class="fa fa-car" aria-hidden="true" class="display-4">HOVLane</h1>
-      
     
-    
+
+            <form name="login">
+                <div class="login">
+                    <input type="text" placeholder="username" name="userId"><br>
+                    <input type="text" placeholder="password" name="psw"><br>
+                    <input type="button" onclick="check(this.form)" value="Login"/>
+                </div> 
+
+                </form>
+
+                <script>
+                function check(form) {
+                    if(form.userId.value == " "  &&  form.psw.value == " " ) {
+                        window.open("")  //main index html link would go here if we want the full page to load with the verified login
+                    }
+
+                    else {
+                        alert("The username and password you entered is not correct")
+
+                    }
+                }
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -129,14 +148,8 @@
 
     <h4 class="text-center">Meetup and carpool service with featured access to local weather and events.</h3>
 
- 
-    <div class="container">
-        <label for="uName"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uName" required>
+    
 
-        <label for="psw"><b>Password</label><b></label>
-            <input type="text" placeholder="Enter Password" name="lName" required>
-    </div>
 
     <div>
         <label for="desIn">Input Destination</label>
