@@ -3,23 +3,25 @@
 // seat geek api = "e4c666478155378c49daac3546b974565be0c50f5528a811bf9cd1f9414a6c15"
 
 var showImage;
+var showArray = []; 
 
 function displayEvent() {
    var queryURL = "https://api.seatgeek.com/2/events?";
    var clientID = "client_id=MTcyMDMwMjJ8MTU2MTU4ODA1Ny40Mg";
-   var clientSecret = "client_secret=e4c666478155378c49daac3546b974565be0c50f5528a811bf9cd1f9414a6c15";
+   var clientSecret = "&client_secret=e4c666478155378c49daac3546b974565be0c50f5528a811bf9cd1f9414a6c15";
 
-   var newEvent = $("#exampleInputEmail1").val().trim()
-   var userLocation = $("#exampleInputPassword1").val().trim()
+   var newEvent = $("#event-search").val().trim()
+   var userLocation = $("#city-search").val().trim()
 
+   queryURL= queryURL + clientID + clientSecret;
    $.ajax({
       url: queryURL,
       method: "GET"
-   }).then(response);
+   }).then(function(response){
 
-   var events = response.events[0].short_title;
-   var getIndex = showArray.indexof(events);
-   var latitude = response.events[0].vemue.location.lat;
+      var events = response.events[0].short_title;
+   var getIndex = showArray.indexOf(events);
+   var latitude = response.events[0].venue.location.lat;
    var longitude = response.events[0].venue.location.lon;
    var venue = response.events[0].venue.name;
    var street = response.events[0].venue.address;
@@ -57,14 +59,17 @@ function displayEvent() {
       var newAddress = $("<p>"); 
       newAddress.html(address); 
 
-      $("#events").append(newImage); 
-      $("#events").append(events); 
-      $("#events").append(venue); 
-      $("#events").append(address); 
+      $("#event-section").append(newImage); 
+      $("#event-section").append(events); 
+      $("#event-section").append(venue); 
+      $("#event-section").append(address); 
 
    }
+   });
 
+   
 
+}
 
    $("#search").on("click", function () {
       event.preventDefault();
@@ -74,8 +79,8 @@ function displayEvent() {
       $.ajax({
          url: queryURL,
          method: "GET"
-      }).then(response);
-      console.log(response);
-   })
-
-
+      }).then(function(response){
+         console.log(response);
+      });
+      
+   }); 
