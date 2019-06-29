@@ -18,8 +18,10 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
 
     <!-- Google maps style test -->
     <style>
@@ -87,89 +89,90 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 
 </head>
 
 <body>
 
-        <img src="images/traffic2.jpg" id="bg" alt="background">
+    <!-- <img src="images/traffic2.jpg" id="bg" alt="background"> -->
 
-    
-        <div class="container">
-            <h1 class="fa fa-car" aria-hidden="true" class="display-4">HOVLane</h1>
-      
-    
-    
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="events.html">Local Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="chat.html">Message Board</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <h4 class="text-center">Meetup and carpool service with featured access to local weather and events.</h3>
-
- 
     <div class="container">
-        <label for="uName"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uName" required>
+        <h1 class="fa fa-car" aria-hidden="true" class="display-4">HOVLane</h1>
 
-        <label for="psw"><b>Password</label><b></label>
-            <input type="text" placeholder="Enter Password" name="lName" required>
+
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Local Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.html">Message Board</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <h4 class="text-center">Meetup and carpool service with featured access to local weather and events.</h3>
+
+
+            <div class="container">
+                <label for="uName"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uName" required>
+
+                <label for="psw"><b>Password</label><b></label>
+                    <input type="text" placeholder="Enter Password" name="lName" required>
+            </div>
+
+            <div>
+                <label for="desIn">Input Destination</label>
+                <input type="text" id="desIn" destination="Input Destination"
+                    placeholder="Input your ending destination">
+
+                <label for="pickup">Pickup Location</label>
+                <input type="text" id="pickup" Start Location="pickup" placeholder="Enter your pickup location">
+
+                <label for="contactInfo">Contact for Chat</label>
+                <input type="text" id="contactInfo" Contact="contactInfo"
+                    placeholder="Enter your email address or phone number to be reached through the chat">
+            </div>
+
+
+            <!-- Testing Google maps - Javier -->
+
+            <div style="display: none">
+                <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
+
+                <input id="destination-input" class="controls" type="text" placeholder="Enter a destination location">
+            </div>
     </div>
 
-    <div>
-        <label for="desIn">Input Destination</label>
-        <input type="text" id="desIn" destination="Input Destination" placeholder="Input your ending destination">
+    <div id="mode-selector" class="controls">
+        <input type="radio" name="type" id="changemode-walking" checked="checked">
+        <label for="changemode-walking">Walking</label>
 
-        <label for="pickup">Pickup Location</label>
-        <input type="text" id="pickup" Start Location="pickup" placeholder="Enter your pickup location">
+        <input type="radio" name="type" id="changemode-transit">
+        <label for="changemode-transit">Transit</label>
 
-        <label for="contactInfo">Contact for Chat</label>
-        <input type="text" id="contactInfo" Contact="contactInfo"
-            placeholder="Enter your email address or phone number to be reached through the chat">
+        <input type="radio" name="type" id="changemode-driving">
+        <label for="changemode-driving">Driving</label>
     </div>
-
-
-    <!-- Testing Google maps - Javier -->
-
-    <div style="display: none">
-        <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
-
-        <input id="destination-input" class="controls" type="text" placeholder="Enter a destination location">
-    </div>
-</div>
-
-        <div id="mode-selector" class="controls">
-            <input type="radio" name="type" id="changemode-walking" checked="checked">
-            <label for="changemode-walking">Walking</label>
-
-            <input type="radio" name="type" id="changemode-transit">
-            <label for="changemode-transit">Transit</label>
-
-            <input type="radio" name="type" id="changemode-driving">
-            <label for="changemode-driving">Driving</label>
-        </div>
 
 
     <div id="map"></div>
