@@ -2,27 +2,80 @@
 // customer id = 	MTcyMDMwMjJ8MTU2MTU4ODA1Ny40Mg
 // seat geek api = "e4c666478155378c49daac3546b974565be0c50f5528a811bf9cd1f9414a6c15"
 
-var queryURL = "https://api.seatgeek.com/2/events?client_id=MTcyMDMwMjJ8MTU2MTU4ODA1Ny40Mg&client_secret=e4c666478155378c49daac3546b974565be0c50f5528a811bf9cd1f9414a6c15";  
+var showImage;
+
+function displayEvent() {
+   var queryURL = "https://api.seatgeek.com/2/events?";
+   var clientID = "client_id=MTcyMDMwMjJ8MTU2MTU4ODA1Ny40Mg";
+   var clientSecret = "client_secret=e4c666478155378c49daac3546b974565be0c50f5528a811bf9cd1f9414a6c15";
+
+   var newEvent = $("#exampleInputEmail1").val().trim()
+   var userLocation = $("#exampleInputPassword1").val().trim()
+
+   $.ajax({
+      url: queryURL,
+      method: "GET"
+   }).then(response);
+
+   var events = response.events[0].short_title;
+   var getIndex = showArray.indexof(events);
+   var latitude = response.events[0].vemue.location.lat;
+   var longitude = response.events[0].venue.location.lon;
+   var venue = response.events[0].venue.name;
+   var street = response.events[0].venue.address;
+   var city = response.events[0].venue.city;
+   var address = street + " " + city;
+
+   if (response.events.length === 0) {
+      alert("Event not found")
+   }
+
+   if (getIndex === -1) {
+      showArray.push(events);
+   }
+
+   if (response.events[0].performers[0].image !== null) {
+      showImage = response.events[0].performers[0].image;
+
+   } else if (!response.events[0].performers[0].image) {
+      for (var i = 0; i < backUpImage.length; i++) {
+         if (backUpImage[i].name == event) {
+            showImage = backUpImage[j].image;
+            showImage = "images/not-found-png-3.png";
+         }
+
+      }
+
+      var newImage = $("<img>").attr("src", showImage);
+      var imageDiv = $("<div>");
+      imageDiv.html(newImage); 
+
+      var newHeadline = $("<h2>"); 
+      newHeadline.html(events); 
+      var newVenue = $("<p>"); 
+      newVenue.html(venue); 
+      var newAddress = $("<p>"); 
+      newAddress.html(address); 
+
+      $("#events").append(newImage); 
+      $("#events").append(events); 
+      $("#events").append(venue); 
+      $("#events").append(address); 
+
+   }
 
 
-function newQuery() {
-   
-   
-    
 
-}
+   $("#search").on("click", function () {
+      event.preventDefault();
+      
+      var queryURL = displayEvent(); 
+
+      $.ajax({
+         url: queryURL,
+         method: "GET"
+      }).then(response);
+      console.log(response);
+   })
 
 
-$.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function(response) {
-    results = response.events; 
-    console.log(response.events); 
-    
- for (var i = 0; i < response.events.length; i++) {
-    console.log(response.events[i].venue.postal_code);
-    $("#events").text(response.events[i].venue.postal_code); 
- } 
-
-  }); 
