@@ -153,7 +153,6 @@
                     placeholder="Enter your email address or phone number to be reached through the chat">
             </div>
 
-
             <!-- Testing Google maps - Javier -->
 
             <div style="display: none">
@@ -278,14 +277,14 @@
             var me = this;
 
             this.directionsService.route({
-                    origin: {
-                        'placeId': this.originPlaceId
-                    },
-                    destination: {
-                        'placeId': this.destinationPlaceId
-                    },
-                    travelMode: this.travelMode
+                origin: {
+                    'placeId': this.originPlaceId
                 },
+                destination: {
+                    'placeId': this.destinationPlaceId
+                },
+                travelMode: this.travelMode
+            },
                 function (response, status) {
                     if (status === 'OK') {
                         me.directionsDisplay.setDirections(response);

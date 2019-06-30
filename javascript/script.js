@@ -16,6 +16,11 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+var database = firebase.database(); 
+
+ 
+//Add route button
+
 // function initialize() {
 //     var input = document.getElementById('desIn');
 //     new google.maps.places.Autocomplete(input);
