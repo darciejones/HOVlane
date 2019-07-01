@@ -96,7 +96,6 @@
                 </div>
             </div>
 
-
             <div class="row">
                 <div class="col-md-12">
 
@@ -120,6 +119,23 @@
                 </div>
             </div>
 
+
+// Weather API
+            <div class="row">
+                    <div class="col-md-12">
+                        <div class="card mb-4">
+                            <h5 class="card-header">Weather</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">See Local Weather</h5>
+                                <p id="weather-space"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+    
+
     <script>
         function gAutoComplete() {
             var picInput = document.getElementById("pickUp-input");
@@ -134,9 +150,10 @@
             var autocomplete2 = new google.maps.places.Autocomplete(desInput, options);
         }
     </script>
+
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyB16-2IDJJayTklxjcMIXXhOF0pKwrRQtI&libraries=places&callback=gAutoComplete">
-    </script>
+        </script>
 
     <script type="text/javascript" src="javascript/script.js">
     </script>
