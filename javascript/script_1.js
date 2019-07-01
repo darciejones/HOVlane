@@ -48,23 +48,44 @@ function displayEvent() {
 
       }
 
+
+      
+   }
+
+   for (i = 0; i < events.length; i++) {
+    
+      var eventType = response.events[i].type; 
+      var eventName = response.events[i].short_title; 
+      var eventAddress = response.events[i].venue.city + response.events[i].venue.state + response.events[i].venue.postal_code; 
+      var eventTime = response.events[i].datetime_local; 
+      var eventLink = response.events[i].url; 
+
       var newImage = $("<img>").attr("src", showImage);
       var imageDiv = $("<div>");
       imageDiv.html(newImage); 
-
+   
       var newHeadline = $("<h2>"); 
-      newHeadline.html(events); 
-      var newVenue = $("<p>"); 
-      newVenue.html(venue); 
+      newHeadline.html(eventName); 
+      var newType = $("<p>"); 
+      newType.html(eventType)
       var newAddress = $("<p>"); 
-      newAddress.html(address); 
-
+    newAddress.html(eventAddress); 
+      var newTime = $("<p>"); 
+      newTime.html(eventTime); 
+      var newLink = $("<p>"); 
+      newLink.html(eventLink); 
+   
       $("#event-section").append(newImage); 
-      $("#event-section").append(events); 
-      $("#event-section").append(venue); 
-      $("#event-section").append(address); 
-
+      $("#event-section").append(eventName); 
+      $("#event-section").append(eventType); 
+      $("#event-section").append(eventAddress); 
+      $("#event-section").append(eventTime);
+      $("#event-section").append(eventLink); 
+      console.log(response); 
    }
+
+
+ 
    });
 
    
@@ -74,13 +95,6 @@ function displayEvent() {
    $("#search").on("click", function () {
       event.preventDefault();
       
-      var queryURL = displayEvent(); 
-
-      $.ajax({
-         url: queryURL,
-         method: "GET"
-      }).then(function(response){
-         console.log(response);
-      });
+      displayEvent(); 
       
    }); 
