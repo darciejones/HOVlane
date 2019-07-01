@@ -86,7 +86,11 @@ function displayWeather() {
   
   var APIkey = "58d010e637ddaa11addf4a7eada12dba";
 
+<<<<<<< HEAD
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + place + APIkey; 
+=======
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?Washington,DC" + APIkey; 
+>>>>>>> 07f5d3a516544c0d5a064f9543322b2c9be7800f
   
   $.ajax({
       url: queryURL,
@@ -207,6 +211,7 @@ database.ref("/destinations").on("child_changed", function (childSnapshot) {
 
   // );
 
+<<<<<<< HEAD
 // function initialize() {
 //     var input = document.getElementById('desIn');
 //     new google.maps.places.Autocomplete(input);
@@ -374,3 +379,32 @@ database.ref("/destinations").on("child_changed", function (childSnapshot) {
         }
 
        
+=======
+
+
+  // newRow.attr("data-key", key );
+
+  // Append the new row to the table
+  // $("#route-table > tbody").append(newRow);
+});
+
+$("#route-table  > tbody ").on("click", ".jpKeys", function (event) {
+  event.preventDefault();
+  var key = $(this).attr("data-key");
+  var passengers2 = $(this).attr("data-pass");
+
+  var a = parseInt(passengers2);
+  console.log(passengers2);
+
+  console.log(typeof (a));
+
+  console.log(key);
+
+  var newCount = a++;
+
+  database.ref("destinations/"+key).update({
+    passengers: a
+  });
+
+})
+>>>>>>> 07f5d3a516544c0d5a064f9543322b2c9be7800f
