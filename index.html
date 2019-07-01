@@ -83,6 +83,78 @@
             <div class="intro-text">
                 <!-- <div class="intro-lead-in">Welcome To Our Studio!</div> -->
                 <div class="intro-heading">Meetup and carpool service with featured access to local weather and events.
+<<<<<<< HEAD
+=======
+                </div>
+                <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Add Route -->
+    <section class="page-section" id="routeSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Add Route</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                </div>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="pickUp">Pickup Location</label>
+                    <input class="form-control" type="text" id="pickUp-input">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input class="form-control" type="text" id="destination-input">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time of Arrival</label>
+                    <input class="form-control" type="text" id="time-input">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-primary" type="button" id="add-route-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!--  Shuttle Schedule Grid -->
+    <section class="bg-light page-section" id="scheduleSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Shuttle Schedule</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                </div>
+            </div>
+            <table class="table" id="route-table">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col">Pickup Location</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Time of Arrival</th>
+                        <th scope="col">Passengers so far</th>
+                        <th scope="col">Click to add Passengers to Route</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Weather -->
+    <section class="page-section" id="weatherSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Weather</h2>
+                    <h5 class="card-title">See Local Weather</h5>
+                    <p id="weather-space"></p>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+>>>>>>> 07f5d3a516544c0d5a064f9543322b2c9be7800f
                 </div>
                 <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
             </div>
@@ -179,6 +251,56 @@
                 <button type="submit" class="btn btn-primary" id="search">Submit</button>
             </form>
 
+            <div class="form-group-row">
+                <label for="password-input"><b>Password</b></label>
+                <input class="form-control" type="text" placeholder="Enter Password" id=password-input>
+            </div> -->
+
+            <!-- Input Destination and Pickup location -->
+
+            <form>
+                <div class="form-group">
+                    <label for="pickUp">Pickup Location</label>
+                    <input class="form-control" type="text" id="pickUp-input">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input class="form-control" type="text" id="destination-input">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time of Arrival</label>
+                    <input class="form-control" type="text" id="time-input">
+                </div>
+
+            </form>
+            <br>
+            <button class="btn btn-primary float-right" id="add-route-btn">Submit</button>
+
+
+        </div>
+    </section>
+
+    <!-- Events -->
+    <section class="bg-light page-section" id="eventsSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Local Events</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                </div>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="input-events">Search for Events</label>
+                    <input type="search" class="form-control" id="event-search" aria-describedby="Help">
+                </div>
+                <div class="form-group">
+                    <label for="input-city">Location</label>
+                    <input type="search" class="form-control" id="city-search">
+                </div>
+                <button type="submit" class="btn btn-primary" id="search">Submit</button>
+            </form>
+
             <div class="row">
                 <div class="col-md-12">
                     <br>
@@ -192,6 +314,25 @@
         </div>
         </div>
     </section>
+<<<<<<< HEAD
+
+    <!-- Message Board -->
+    <section class="bg-light page-section" id="eventsSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Message Board</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+        <div class="card w-25">
+    
+=======
 
     <!-- Message Board -->
     <section class="bg-light page-section" id="eventsSection">
@@ -215,6 +356,7 @@
             </div>
         </div>
     </div> -->
+>>>>>>> 07f5d3a516544c0d5a064f9543322b2c9be7800f
         </div>
         </div>
     </section>
@@ -270,6 +412,63 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Your Website 2019</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+
+=======
 
     <!-- Footer -->
     <footer class="footer">
@@ -325,6 +524,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
+>>>>>>> 07f5d3a516544c0d5a064f9543322b2c9be7800f
     <script>
         function gAutoComplete() {
             var picInput = document.getElementById("pickUp-input");
@@ -339,7 +539,160 @@
             var autocomplete2 = new google.maps.places.Autocomplete(desInput, options);
         }
     </script>
+    <!-- 
+    <script>
+        function gAutoComplete2() {
+            var desInput = document.getElementsByClassName("destination-input");
+            var options = {
+                componentRestrictions: {
+                    country: "us"
+                }
+            };
 
+            <!-- Testing Google maps - Javier -->
+
+    <!-- Testing Google maps - Javier -->
+    <!-- 
+    <div style="display: none">
+        <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
+
+        <input id="destination-input" class="controls" type="text" placeholder="Enter a destination location">
+    </div>
+    </div> -->
+
+    <!-- <div id="mode-selector" class="controls">
+        <input type="radio" name="type" id="changemode-walking" checked="checked">
+        <label for="changemode-walking">Walking</label>
+
+        <input type="radio" name="type" id="changemode-transit">
+        <label for="changemode-transit">Transit</label>
+
+        <input type="radio" name="type" id="changemode-driving">
+        <label for="changemode-driving">Driving</label>
+    </div>
+
+
+    <div id="map"></div> -->
+
+
+
+    <script>
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script
+        // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                mapTypeControl: false,
+                center: {
+                    lat: 38.881478,
+                    lng: -77.116071
+                },
+                zoom: 13
+            });
+
+            new AutocompleteDirectionsHandler(map);
+        }
+
+        /**
+         * @constructor
+         */
+        function AutocompleteDirectionsHandler(map) {
+            this.map = map;
+            this.originPlaceId = null;
+            this.destinationPlaceId = null;
+            this.travelMode = 'WALKING';
+            this.directionsService = new google.maps.DirectionsService;
+            this.directionsDisplay = new google.maps.DirectionsRenderer;
+            this.directionsDisplay.setMap(map);
+
+            var originInput = document.getElementById('origin-input');
+            var destinationInput = document.getElementById('destination-input');
+            var modeSelector = document.getElementById('mode-selector');
+
+            var originAutocomplete = new google.maps.places.Autocomplete(originInput);
+            // Specify just the place data fields that you need.
+            originAutocomplete.setFields(['place_id']);
+
+            var destinationAutocomplete =
+                new google.maps.places.Autocomplete(destinationInput);
+            // Specify just the place data fields that you need.
+            destinationAutocomplete.setFields(['place_id']);
+
+            this.setupClickListener('changemode-walking', 'WALKING');
+            this.setupClickListener('changemode-transit', 'TRANSIT');
+            this.setupClickListener('changemode-driving', 'DRIVING');
+
+            this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+            this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+
+            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(
+                destinationInput);
+            this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+        }
+
+        // Sets a listener on a radio button to change the filter type on Places
+        // Autocomplete.
+        AutocompleteDirectionsHandler.prototype.setupClickListener = function (
+            id, mode) {
+            var radioButton = document.getElementById(id);
+            var me = this;
+
+            radioButton.addEventListener('click', function () {
+                me.travelMode = mode;
+                me.route();
+            });
+        };
+
+        AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (
+            autocomplete, mode) {
+            var me = this;
+            autocomplete.bindTo('bounds', this.map);
+
+            autocomplete.addListener('place_changed', function () {
+                var place = autocomplete.getPlace();
+
+                if (!place.place_id) {
+                    window.alert('Please select an option from the dropdown list.');
+                    return;
+                }
+                if (mode === 'ORIG') {
+                    me.originPlaceId = place.place_id;
+                } else {
+                    me.destinationPlaceId = place.place_id;
+                }
+                me.route();
+            });
+        };
+
+        AutocompleteDirectionsHandler.prototype.route = function () {
+            if (!this.originPlaceId || !this.destinationPlaceId) {
+                return;
+            }
+            var me = this;
+
+            this.directionsService.route({
+                origin: {
+                    'placeId': this.originPlaceId
+                },
+                destination: {
+                    'placeId': this.destinationPlaceId
+                },
+                travelMode: this.travelMode
+            },
+                function (response, status) {
+                    if (status === 'OK') {
+                        me.directionsDisplay.setDirections(response);
+                    } else {
+                        window.alert('Directions request failed due to ' + status);
+                    }
+                });
+        };
+    </script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16-2IDJJayTklxjcMIXXhOF0pKwrRQtI&libraries=places&callback=initMap" async defer></script> -->
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyB16-2IDJJayTklxjcMIXXhOF0pKwrRQtI&libraries=places&callback=gAutoComplete">
     </script>

@@ -6,7 +6,10 @@ var showImage;
 var showArray = []; 
 
 function displayEvent() {
-   var queryURL = "https://api.seatgeek.com/2/events?";
+   
+   var eventType = $(this).attr("event-data"); 
+   var place = $(this).attr("place-data")
+   var queryURL = "https://api.seatgeek.com/2/events?q=" + eventType + "&taxonomies" + place + "&city"
    var clientID = "client_id=MTcyMDMwMjJ8MTU2MTU4ODA1Ny40Mg";
    var clientSecret = "&client_secret=e4c666478155378c49daac3546b974565be0c50f5528a811bf9cd1f9414a6c15";
 
@@ -21,8 +24,6 @@ function displayEvent() {
 
       var events = response.events[0].short_title;
    var getIndex = showArray.indexOf(events);
-   var latitude = response.events[0].venue.location.lat;
-   var longitude = response.events[0].venue.location.lon;
    var venue = response.events[0].venue.name;
    var street = response.events[0].venue.address;
    var city = response.events[0].venue.city;
