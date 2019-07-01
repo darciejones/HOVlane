@@ -85,7 +85,7 @@ function displayWeather() {
 
   var APIkey = "58d010e637ddaa11addf4a7eada12dba";
 
-  var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + APIkey; 
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?Washington,DC" + APIkey; 
   
   $.ajax({
       url: queryURL,
