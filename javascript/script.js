@@ -114,6 +114,7 @@ database.ref("/destinations").on("child_added", function (childSnapshot) {
     $("<td>").text(pickUp),
     $("<td>").text(destination),
     $("<td>").text(time),
+    $("<td>").text(passengers),
     $("<td>").append("<button class='btn btn-primary jpKeys' id=" + key + " data-key=" + key + " data-pass=" + passengers + ">Add</button>")
 
     // .attr("id", "addPass").on("click", function(){
