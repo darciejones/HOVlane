@@ -22,7 +22,7 @@ $("#add-route-btn").on("click", function (event) {
   var pickUp = $("#pickUp-input").val().trim();
   var destination = $("#destination-input").val().trim();
   var time = moment($("#time-input").val().trim(), "hh:mm").format("hh:mm");
-
+  var weather =$("#destination-input").val().trim(); 
 
   // Variable to hold temporary data for Route
   var newRoute = {
@@ -79,8 +79,39 @@ $("#add-newUser-btn").on("click", function (event) {
   // $("#passengers-input").val("");
 });
 
+// Weather API
+
+function displayWeather() {
+
+  var APIkey = "58d010e637ddaa11addf4a7eada12dba";
+
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + APIkey; 
+  
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+  })
+      .then(function (response) {
+          console.log(response);
+        
+          var city = response.city; 
+          var userCity = $("<p>").text("Location: " + city ); 
+          var weather = reponse.weather[0].description; 
+          var condition = $("<p>").text("Current Weather: " + weather); 
+          var temp = response.main.temp; 
+          var tempOutside = $("<p>").text("Current Temperature: " + temp)
+          $("#weather-section").append(userCity); 
+          $("#weather-section").append(condition); 
+          $("#weather-section").append(tempOutside); 
+        
+          
+      })
+}
+
+
 database.ref("/destinations").on("child_added", function (childSnapshot) {
   // console.log(childSnapshot.val());
+
 
   // Store everything into a variable.
   var pickUp = childSnapshot.val().pickup;
@@ -174,7 +205,9 @@ database.ref("/destinations").on("child_changed", function (childSnapshot) {
   //   //   $(".myDisplay").toggle()
   //   // })
 
+
   // );
+
 
 
   // newRow.attr("data-key", key );
