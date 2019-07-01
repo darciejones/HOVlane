@@ -145,7 +145,7 @@ database.ref("/destinations").on("child_added", function (childSnapshot) {
     $("<td>").text(pickUp),
     $("<td>").text(destination),
     $("<td>").text(time),
-    $("<td>").append("<button class='btn btn-primary jpKeys' data-key=" + key + " data-pass=" + passengers + ">Add</button>")
+    $("<td>").append("<button class='btn btn-primary jpKeys' id=" + key + " data-key=" + key + " data-pass=" + passengers + ">Add</button>")
 
     // .attr("id", "addPass").on("click", function(){
     //   $(".myDisplay").toggle()
@@ -174,6 +174,8 @@ database.ref("/destinations").on("child_changed", function (childSnapshot) {
   var newName = childSnapshot.val().name;
   var passengers = childSnapshot.val().passengers;
 
+  $('#'+key).attr("data-pass", passengers);
+
 
   // // Route Schedule Info
   // console.log(pickUp);
@@ -192,26 +194,25 @@ database.ref("/destinations").on("child_changed", function (childSnapshot) {
   // $("#route-table  > tbody ").empty()
 
   // Create the new row
-  var newRow = $("<tr>").append(
-    $("<td>").text(pickUp),
-    $("<td>").text(destination),
-    $("<td>").text(time),
-    $("<td>").append("<button class='btn btn-primary jpKeys' data-key=" + key + " data-pass=" + passengers + ">Add</button>")
+  // var newRow = $("<tr>").append(
+  //   $("<td>").text(pickUp),
+  //   $("<td>").text(destination),
+  //   $("<td>").text(time),
+  //   $("<td>").append("<button class='btn btn-primary jpKeys' data-key=" + key + " data-pass=" + passengers + ">Add</button>")
 
-    // .attr("id", "addPass").on("click", function(){
-    //   $(".myDisplay").toggle()
-    // })
+  //   // .attr("id", "addPass").on("click", function(){
+  //   //   $(".myDisplay").toggle()
+  //   // })
 
-  );
- 
-//Add route button
+
+  // );
 
 
 
   // newRow.attr("data-key", key );
 
   // Append the new row to the table
-  $("#route-table > tbody").append(newRow);
+  // $("#route-table > tbody").append(newRow);
 });
 
 $("#route-table  > tbody ").on("click", ".jpKeys", function (event) {
@@ -226,15 +227,10 @@ $("#route-table  > tbody ").on("click", ".jpKeys", function (event) {
 
   console.log(key);
 
-  a++;
+  var newCount = a++;
 
-
-
-  database.ref("/destinations").child(key).update({
+  database.ref("destinations/"+key).update({
     passengers: a
-
-  })
-
-
+  });
 
 })
