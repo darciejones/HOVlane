@@ -48,37 +48,6 @@ $("#add-route-btn").on("click", function (event) {
   $("#time-input").val("");
 });
 
-//Add New Passengers button
-$("#add-newUser-btn").on("click", function (event) {
-  event.preventDefault();
-
-
-
-  // //  User input to add his name and number of passengers 
-
-  // var newName = $("#name-input").val().trim();
-  // var passengers = $("#passengers-input").val().trim();
-
-  // var newUser = {
-  //   name: newName,
-  //   passengers: passengers
-  // };
-
-  // // Uploads New user's info to database
-  // database.ref("/users").push(newUser);
-
-
-  // // Logs everything to console
-  // console.log(newUser.newName);
-  // console.log(newUser.passengers);
-
-  // alert("New Passengers successfully added");
-
-  // // Clears all of the text-boxes
-  // $("#name-input").val("");
-  // $("#passengers-input").val("");
-});
-
 // Weather API
 
 function displayWeather() {
@@ -125,21 +94,7 @@ database.ref("/destinations").on("child_added", function (childSnapshot) {
   var passengers = childSnapshot.val().passengers;
 
 
-  // // Route Schedule Info
-  // console.log(pickUp);
-  // console.log(destination);
-  // console.log(time);
 
-  // // Passengers Info
-  // console.log(newName);
-  // console.log(passengers);
-
-  //Displays Apply to Route Form
-  // $("#addPass").on("click", function() {
-  //   $(".myDisplay").toggle()
-  // })
-
-  // $("#route-table  > tbody ").empty()
   // Create the new row
   var newRow = $("<tr>").append(
     $("<td>").text(pickUp),
@@ -148,14 +103,10 @@ database.ref("/destinations").on("child_added", function (childSnapshot) {
     $("<td>").text(passengers),
     $("<td>").append("<button class='btn btn-primary jpKeys' id=" + key + " data-key=" + key + " data-pass=" + passengers + ">Add</button>")
 
-    // .attr("id", "addPass").on("click", function(){
-    //   $(".myDisplay").toggle()
-    // })
 
   );
 
 
-  // newRow.attr("data-key", key );
 
   // Append the new row to the table
   $("#route-table > tbody").append(newRow);
@@ -177,43 +128,6 @@ database.ref("/destinations").on("child_changed", function (childSnapshot) {
 
   $('#'+key).attr("data-pass", passengers);
 
-
-  // // Route Schedule Info
-  // console.log(pickUp);
-  // console.log(destination);
-  // console.log(time);
-
-  // // Passengers Info
-  // console.log(newName);
-  // console.log(passengers);
-
-  //Displays Apply to Route Form
-  // $("#addPass").on("click", function() {
-  //   $(".myDisplay").toggle()
-  // })
-
-  // $("#route-table  > tbody ").empty()
-
-  // Create the new row
-  // var newRow = $("<tr>").append(
-  //   $("<td>").text(pickUp),
-  //   $("<td>").text(destination),
-  //   $("<td>").text(time),
-  //   $("<td>").append("<button class='btn btn-primary jpKeys' data-key=" + key + " data-pass=" + passengers + ">Add</button>")
-
-  //   // .attr("id", "addPass").on("click", function(){
-  //   //   $(".myDisplay").toggle()
-  //   // })
-
-
-  // );
-
-
-
-  // newRow.attr("data-key", key );
-
-  // Append the new row to the table
-  // $("#route-table > tbody").append(newRow);
 });
 
 $("#route-table  > tbody ").on("click", ".jpKeys", function (event) {
