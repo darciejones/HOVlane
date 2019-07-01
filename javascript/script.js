@@ -85,7 +85,7 @@ function displayWeather() {
 
   var APIkey = "58d010e637ddaa11addf4a7eada12dba";
 
-  var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + APIkey; 
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?Washington,DC" + APIkey; 
   
   $.ajax({
       url: queryURL,
@@ -145,6 +145,7 @@ database.ref("/destinations").on("child_added", function (childSnapshot) {
     $("<td>").text(pickUp),
     $("<td>").text(destination),
     $("<td>").text(time),
+    $("<td>").text(passengers),
     $("<td>").append("<button class='btn btn-primary jpKeys' id=" + key + " data-key=" + key + " data-pass=" + passengers + ">Add</button>")
 
     // .attr("id", "addPass").on("click", function(){
